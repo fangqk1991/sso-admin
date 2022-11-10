@@ -27,9 +27,13 @@ jobs:
           docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
           
           commitSHA=${GITHUB_SHA::8}
-          latestImageTag="$_repoName:$commitSHA"
 
           docker build -t $_repoName -f $_dockerFile . --build-arg "commitSHA=$commitSHA"
+          latestImageTag="$_repoName:$commitSHA"
+          docker tag $_repoName $latestImageTag
+          docker push $latestImageTag
+          
+          latestImageTag="$_repoName:latest"
           docker tag $_repoName $latestImageTag
           docker push $latestImageTag
 
