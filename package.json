@@ -54,11 +54,10 @@
   },
   "devDependencies": {
     "@fangcha/account-frontend": "^0.1.1",
-    "@fangcha/auth-frontend": "^0.2.0",
     "@fangcha/datawich-frontend": "^0.13.0",
     "@fangcha/eslint": "^0.3.2",
     "@fangcha/generator": "^0.1.1",
-    "@fangcha/vue": "^0.49.0",
+    "@fangcha/vue": "^0.50.0",
     "@fangcha/webpack": "^0.9.1",
     "@types/ali-oss": "^6.0.10",
     "@types/assert": "^1.4.6",

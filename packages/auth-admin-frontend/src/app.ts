@@ -1,5 +1,5 @@
 import { AdminApp } from '@fangcha/vue/app-admin'
-import { AuthFrontendPlugin, MySession } from '@fangcha/auth-frontend'
+import { AuthFrontendPlugin, MySession } from '@fangcha/vue/auth'
 import ClientListView from './views/client/ClientListView'
 import MyClientListView from './views/client/MyClientListView'
 import ClientDetailView from './views/client/ClientDetailView'
