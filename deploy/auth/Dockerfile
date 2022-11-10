@@ -21,11 +21,6 @@ RUN node ./deploy/deps/purify-package-json.js /data/meta-files
 RUN mkdir -p /data/prod-meta-files/packages \
     && cp -r /data/meta-files/package.json /data/meta-files/yarn.lock /data/prod-meta-files
 
-# 将运行时配置文件移动到 /data/config-files 中，避免其影响缓存命中
-RUN mkdir -p /data/config-files \
-    && mv /data/source-files/config/*.js /data/config-files/ \
-    && mv /data/config-files/*default.js /data/source-files/config/
-
 ###### FILES_CACHE 阶段个性化代码 START ######
 # 复制本次构建项目的 package.json 到 /data/prod-meta-files
 RUN cp -r /data/meta-files/packages/auth-backend /data/meta-files/packages/auth-admin-frontend /data/prod-meta-files/packages
