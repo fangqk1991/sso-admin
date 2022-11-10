@@ -993,10 +993,10 @@
   dependencies:
     "@fangcha/app-error" "^1.1.0"
 
-"@fangcha/auth-frontend@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@fangcha/auth-frontend/-/auth-frontend-0.1.4.tgz#566cd0bbc5e225e11a3e0b012c930562c139ed1a"
-  integrity sha512-0Np+8wSOb4SXwAdqAzBeMtDSnnd81nSACQG6jW0PjF2r1bgz2pV4Oy6xSbIXAe1AA9UcZAeFJIcpFcc9sCs7VQ==
+"@fangcha/auth-frontend@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@fangcha/auth-frontend/-/auth-frontend-0.2.0.tgz#25f50f22cf085a18ec3578862e8095e81ebc5b34"
+  integrity sha512-GKiruGFEC1jFHu2wi6pLBY/3xEFktQW+zzwTsxToCumQey10MKU2xQrXCplrf3vBkw+k6jHEx6BEMOTjTOpQJg==
 
 "@fangcha/backend-kit@^0.34.0":
   version "0.34.0"

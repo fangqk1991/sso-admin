@@ -5,9 +5,15 @@ import MyClientListView from './views/client/MyClientListView'
 import ClientDetailView from './views/client/ClientDetailView'
 import { KitAuthApis } from '@fangcha/backend-kit/lib/apis'
 import { I18nCode, VisitorInfo } from '@fangcha/tools'
+import { HomeView } from './views/HomeView'
+
+MySession.defaultRedirectUri = '/'
 
 const _fcApp = new AdminApp({
-  appName: 'Auth Admin',
+  appName: 'SSO Admin',
+
+  homeView: HomeView,
+
   plugins: [AuthFrontendPlugin()],
 
   loginUrl: KitAuthApis.RedirectLogin.route,
