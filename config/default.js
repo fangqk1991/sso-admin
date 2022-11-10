@@ -3,7 +3,6 @@ module.exports = {
   Tags: [],
   FangchaAuth: {
     configVersion: '0.0.0',
-    onlyStatic: false,
     wecomBotKey: '',
     adminBaseURL: 'http://localhost:2599',
     adminPort: 2600,
