@@ -43,7 +43,6 @@ FROM node:12-alpine AS MODULES_CACHE
 
 ARG PRE_BUILD_DIR=/data/pre-build
 ARG BUILD_DIR=/data/build
-ARG useCDN=true
 
 WORKDIR ${PRE_BUILD_DIR}
 
@@ -68,13 +67,7 @@ RUN cp -r ./deploy/docker.deps.local/* ./deploy/docker.deps/
 
 ###### MODULES_CACHE 阶段个性化代码 START ######
 RUN cd ${PRE_BUILD_DIR} && yarn workspace auth-backend run build
-
-RUN if [ "${useCDN}" = "false" ] ; then \
-        cd ${PRE_BUILD_DIR} && yarn workspace auth-admin-frontend run build:dev; \
-    else \
-        cd ${PRE_BUILD_DIR} && yarn workspace auth-admin-frontend run build \
-        && npx ali-oss-lazy-upload ./deploy/docker.deps/web-cdn.oss.config.js ./packages/auth-admin-frontend/dist fangcha-auth; \
-    fi
+RUN cd ${PRE_BUILD_DIR} && yarn workspace auth-admin-frontend run build
 
 RUN cp -r ${PRE_BUILD_DIR}/config ${BUILD_DIR} \
     && cp -r ${PRE_BUILD_DIR}/packages/auth-backend/dist ${BUILD_DIR}/packages/auth-backend \

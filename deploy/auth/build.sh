@@ -11,7 +11,7 @@ imageName=fangcha.app/auth
 containerName=my-auth
 env=development
 # 静态资源会根据 Refer 判断防盗链，本地环境不能正常访问，故传递参数构建特殊镜像
-docker build -t ${imageName} -f "${__DIR__}/Dockerfile" . --build-arg useCDN=false --build-arg configSecret=${configSecret}
+docker build -t ${imageName} -f "${__DIR__}/Dockerfile" . --build-arg useCDN=false
 
 docker container stop ${containerName} || true
 docker container rm ${containerName} || true
