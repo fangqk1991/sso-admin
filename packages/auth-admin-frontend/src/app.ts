@@ -1,12 +1,31 @@
-import { BasicApp } from '@fangcha/vue/app'
-import { AuthFrontendPlugin } from '@fangcha/auth-frontend'
+import { AdminApp } from '@fangcha/vue/app-admin'
+import { AuthFrontendPlugin, MySession } from '@fangcha/auth-frontend'
 import ClientListView from './views/client/ClientListView'
 import MyClientListView from './views/client/MyClientListView'
 import ClientDetailView from './views/client/ClientDetailView'
+import { KitAuthApis } from '@fangcha/backend-kit/lib/apis'
+import { I18nCode, VisitorInfo } from '@fangcha/tools'
 
-const _fcApp = new BasicApp({
+const _fcApp = new AdminApp({
   appName: 'Auth Admin',
   plugins: [AuthFrontendPlugin()],
+
+  loginUrl: KitAuthApis.RedirectLogin.route,
+  logoutUrl: KitAuthApis.RedirectLogout.route,
+
+  reloadUserInfo: async (): Promise<VisitorInfo> => {
+    await MySession.reloadSessionInfo()
+    const email = MySession.curUser?.email || ''
+    return {
+      iamId: 0,
+      email: email,
+      name: email,
+      permissionKeyMap: {},
+      // isAdmin: true,
+      locale: I18nCode.en,
+    }
+  },
+
   sidebarNodes: [
     {
       titleEn: '授权应用',
