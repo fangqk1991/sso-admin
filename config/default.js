@@ -8,6 +8,16 @@ module.exports = {
     adminBaseURL: 'http://localhost:2599',
     adminPort: 2600,
     adminJwtSecret: '<TmplDemo Random 32>',
+    mysql: {
+      ssoDB: {
+        host: '127.0.0.1',
+        port: 3306,
+        dialect: 'mysql',
+        database: 'fangcha_sso',
+        username: 'root',
+        password: '',
+      },
+    },
   },
   FangchaAuthDev: {
     adminFrontendPort: 2599,

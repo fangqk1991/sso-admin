@@ -1053,10 +1053,10 @@
   resolved "https://registry.yarnpkg.com/@fangcha/router/-/router-0.18.1.tgz#15c904f79d9d880e355566685010a02231af925f"
   integrity sha512-pNjl0dk4RY6CSBhyAELiWcUcb/rCxHrPsjzUSpyQNlK4hRMVLOfGqGloW8TKEc2VCm8ej5jTIkT4I4H78tmfAw==
 
-"@fangcha/sso-server@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@fangcha/sso-server/-/sso-server-0.10.0.tgz#3c0fed9e545cdad7ce7b787e591759b175cfe420"
-  integrity sha512-g5/5uZKCU4aSsfO+d6o/+xNKQQVmiq5Vk2y4Imz/3mKThvGP3gNpgjis1GiTDlgtakwxA7XBoq3shMtJVwe5Hg==
+"@fangcha/sso-server@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@fangcha/sso-server/-/sso-server-0.11.0.tgz#e75bed537be660e0588b4d957089fccdad56cad9"
+  integrity sha512-nlxVDqBQddTRM9mpDECDRoCCeQq1AveD93P67+Ff0qjvbzjXOKEWI1mzbepsoul62w4Szf9mKZ9rPGJcNWLalw==
   dependencies:
     oauth2-server "^3.1.1"
 

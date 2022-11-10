@@ -5,7 +5,6 @@ import { AuthConfig } from '../AuthConfig'
 
 export const MySsoServer = new SsoServer({
   database: MyDatabase.ssoDB,
-  redisConfig: AuthConfig.redisCache,
   webBaseURL: AuthConfig.webBaseURL,
   webJwtSecret: AuthConfig.webJwtSecret,
   tableName_SsoClient: 'sso_client',
