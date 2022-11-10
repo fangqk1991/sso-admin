@@ -19,7 +19,7 @@
     "@fangcha/logger": "^0.4.0",
     "@fangcha/oss-service": "^0.6.0",
     "@fangcha/router": "^0.18.1",
-    "@fangcha/sso-server": "^0.11.0",
+    "@fangcha/sso-server": "^0.12.0",
     "@fangcha/swagger": "^0.1.1",
     "@fangcha/tools": "^1.22.0",
     "@koa/router": "^12.0.0",

@@ -3,24 +3,22 @@ import { GlobalAppConfig } from 'fc-config'
 import { FangchaApp } from '@fangcha/backend-kit'
 import { WebAuthSdkPlugin } from '@fangcha/backend-kit/lib/auth'
 import { SsoAdminPlugin } from '@fangcha/sso-server/lib/admin-sdk'
-import { MySsoServer } from '../services/MySsoServer'
+import { MyClientManager } from '../services/MyClientManager'
 
 const app = new FangchaApp({
   env: GlobalAppConfig.Env,
   tags: GlobalAppConfig.Tags,
-  appName: 'auth-admin',
+  appName: 'sso-admin',
   wecomBotKey: AuthConfig.wecomBotKey,
   plugins: [
     SsoAdminPlugin({
       backendPort: AuthConfig.adminPort,
       baseURL: AuthConfig.adminBaseURL,
+      jwtKey: AuthConfig.adminJwtKey,
       jwtSecret: AuthConfig.adminJwtSecret,
-      ssoServer: MySsoServer,
+      clientManager: MyClientManager,
     }),
-    WebAuthSdkPlugin({
-      usernameRetained: 'admin@example.com',
-      passwordRetained: 'admin',
-    }),
+    WebAuthSdkPlugin(AuthConfig.WebAuth),
   ],
 
   appDidLoad: async () => {},

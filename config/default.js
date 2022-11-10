@@ -7,6 +7,7 @@ module.exports = {
     wecomBotKey: '',
     adminBaseURL: 'http://localhost:2599',
     adminPort: 2600,
+    adminJwtKey: 'sso_admin_jwt_key',
     adminJwtSecret: '<TmplDemo Random 32>',
     mysql: {
       ssoDB: {
@@ -17,6 +18,10 @@ module.exports = {
         username: 'root',
         password: '',
       },
+    },
+    WebAuth: {
+      usernameRetained: 'admin@example.com',
+      passwordRetained: 'admin',
     },
   },
   FangchaAuthDev: {
