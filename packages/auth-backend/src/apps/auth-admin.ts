@@ -23,7 +23,7 @@ const app = new FangchaApp({
     WebAuthSdkPlugin({
       authMode: 'simple',
       simpleAuth: {
-        retainedUserData: AuthConfig.AuthSDK.retainedUserData,
+        retainedUserData: AuthConfig.WebAuth.retainedUserData,
         accountServer: new AccountServer({
           database: MyDatabase.ssoDB,
         }),

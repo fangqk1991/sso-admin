@@ -1,5 +1,9 @@
 const envData = process.env || {}
 
+const retainedUserData = {}
+if (envData.Auth_User) {
+  retainedUserData[envData.Auth_User] = envData.Auth_Password
+}
 module.exports = {
   FangchaAuth: {
     configVersion: '0.0.0',
@@ -19,8 +23,7 @@ module.exports = {
       },
     },
     WebAuth: {
-      usernameRetained: envData.Auth_User,
-      passwordRetained: envData.Auth_Password,
+      retainedUserData: retainedUserData,
     },
   },
 }

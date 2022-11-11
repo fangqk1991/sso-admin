@@ -19,8 +19,9 @@ module.exports = {
       },
     },
     WebAuth: {
-      usernameRetained: 'admin@example.com',
-      passwordRetained: 'admin',
+      retainedUserData: {
+        // 'admin@example.com': 'admin',
+      },
     },
   },
   FangchaAuthDev: {
