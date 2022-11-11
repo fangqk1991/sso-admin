@@ -4,6 +4,8 @@ import { FangchaApp } from '@fangcha/backend-kit'
 import { WebAuthSdkPlugin } from '@fangcha/backend-kit/lib/auth'
 import { SsoAdminPlugin } from '@fangcha/sso-server/lib/admin-sdk'
 import { MyClientManager } from '../services/MyClientManager'
+import { AccountServer } from '@fangcha/account'
+import { MyDatabase } from '../services/MyDatabase'
 
 const app = new FangchaApp({
   env: GlobalAppConfig.Env,
@@ -18,7 +20,15 @@ const app = new FangchaApp({
       jwtSecret: AuthConfig.adminJwtSecret,
       clientManager: MyClientManager,
     }),
-    WebAuthSdkPlugin(AuthConfig.WebAuth),
+    WebAuthSdkPlugin({
+      authMode: 'simple',
+      simpleAuth: {
+        retainedUserData: AuthConfig.AuthSDK.retainedUserData,
+        accountServer: new AccountServer({
+          database: MyDatabase.ssoDB,
+        }),
+      },
+    }),
   ],
 
   appDidLoad: async () => {},
