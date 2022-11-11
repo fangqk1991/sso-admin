@@ -26,6 +26,7 @@ const app = new FangchaApp({
         retainedUserData: AuthConfig.WebAuth.retainedUserData,
         accountServer: new AccountServer({
           database: MyDatabase.ssoDB,
+          ...AuthConfig.WebAuth.accountTableOptions,
         }),
       },
     }),

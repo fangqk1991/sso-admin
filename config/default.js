@@ -22,6 +22,11 @@ module.exports = {
       retainedUserData: {
         // 'admin@example.com': 'admin',
       },
+      accountTableOptions: {
+        tableName_Account: 'fc_account',
+        tableName_AccountCarrier: 'fc_account_carrier',
+        tableName_AccountCarrierExtras: 'fc_account_carrier_extras',
+      },
     },
   },
   FangchaAuthDev: {

@@ -24,6 +24,11 @@ module.exports = {
     },
     WebAuth: {
       retainedUserData: retainedUserData,
+      accountTableOptions: {
+        tableName_Account: envData.DB_Table_Account,
+        tableName_AccountCarrier: envData.DB_Table_AccountCarrier,
+        tableName_AccountCarrierExtras: envData.DB_Table_AccountCarrierExtras,
+      },
     },
   },
 }
