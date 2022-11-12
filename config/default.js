@@ -5,6 +5,7 @@ module.exports = {
     configVersion: '0.0.0',
     wecomBotKey: '',
     adminBaseURL: 'http://localhost:2599',
+    adminPort_frontend: 2599,
     adminPort: 2600,
     adminJwtKey: 'sso_admin_jwt_key',
     adminJwtSecret: '<TmplDemo Random 32>',
@@ -18,6 +19,10 @@ module.exports = {
         password: '',
       },
     },
+    ssoTableOptions: {
+      tableName_SsoClient: 'sso_client',
+      tableName_UserAuth: 'user_auth',
+    },
     WebAuth: {
       retainedUserData: {
         // 'admin@example.com': 'admin',
@@ -28,9 +33,5 @@ module.exports = {
         tableName_AccountCarrierExtras: 'fc_account_carrier_extras',
       },
     },
-  },
-  FangchaAuthDev: {
-    adminFrontendPort: 2599,
-    cdnURLBase: 'https://fc-cdn.oss-cn-hangzhou.aliyuncs.com/fangcha-auth/',
   },
 }

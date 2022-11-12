@@ -22,6 +22,10 @@ module.exports = {
         password: envData.DB_Password,
       },
     },
+    ssoTableOptions: {
+      tableName_SsoClient: envData.DB_Table_SsoClient,
+      tableName_UserAuth: envData.DB_Table_UserAuth,
+    },
     WebAuth: {
       retainedUserData: retainedUserData,
       accountTableOptions: {
