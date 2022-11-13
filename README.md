@@ -33,16 +33,16 @@ docker run -d --restart=unless-stopped \
 ```
 
 ### 环境变量说明
-| 环境变量 | 缺省值 | 说明 |
-|:-------|:---|:---|
+| 环境变量 | 缺省值                     | 说明 |
+|:-------|:------------------------|:---|
 | `adminBaseURL` | `http://localhost:2599` | 网站 baseURL |
-| `adminJwtSecret` | `<TmplDemo Random 32>` | JWT Secret |
-| `DB_Host` | `127.0.0.1` | MySQL Host |
-| `DB_Port` | `3306` | MySQL 端口 |
-| `DB_Name` | `fangcha_sso` | MySQL 数据库名 |
-| `DB_User` | `root` | MySQL 用户名 |
-| `DB_Password` |  | MySQL 用户密码 |
-| `Auth_User` |  | 临时鉴权用户名 |
-| `Auth_Password` |  | 临时鉴权用户密码 |
-| `DB_Table_SsoClient` | `sso_client` | SsoClient 表名 |
-| `DB_Table_UserAuth` | `user_auth` | UserAuth 表名 |
+| `adminJwtSecret` | `<TmplDemo Random 32>`  | JWT Secret |
+| `DB_Host` | `127.0.0.1`             | MySQL Host |
+| `DB_Port` | `3306`                  | MySQL 端口 |
+| `DB_Name` | `fangcha_sso`           | MySQL 数据库名 |
+| `DB_User` | `root`                  | MySQL 用户名 |
+| `DB_Password` |                         | MySQL 用户密码 |
+| `Auth_User` |                         | 临时鉴权用户名 |
+| `Auth_Password` |                         | 临时鉴权用户密码 |
+| `DB_Table_SsoClient` | `fc_sso_client`         | SsoClient 表名 |
+| `DB_Table_UserAuth` | `fc_user_auth`          | UserAuth 表名 |
