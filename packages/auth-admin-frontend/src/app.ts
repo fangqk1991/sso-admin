@@ -6,6 +6,7 @@ import ClientDetailView from './views/client/ClientDetailView'
 import { KitAuthApis } from '@fangcha/backend-kit/lib/apis'
 import { I18nCode, VisitorInfo } from '@fangcha/tools'
 import { HomeView } from './views/HomeView'
+import { AccountListView } from './views/account/AccountListView'
 
 MySession.defaultRedirectUri = '/'
 
@@ -50,6 +51,18 @@ const _fcApp = new AdminApp({
         },
       ],
     },
+    {
+      titleEn: '用户管理',
+      titleZh: '用户管理',
+      icon: 'el-icon-user',
+      links: [
+        {
+          titleEn: '账号管理',
+          titleZh: '账号管理',
+          path: '/v1/account',
+        },
+      ],
+    },
   ],
   routes: [
     {
@@ -66,6 +79,11 @@ const _fcApp = new AdminApp({
       path: '/v1/client/:clientId',
       component: ClientDetailView,
       name: 'ClientDetailView',
+    },
+    {
+      path: '/v1/account',
+      component: AccountListView,
+      name: 'AccountListView',
     },
   ],
 })
