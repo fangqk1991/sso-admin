@@ -1,5 +1,5 @@
 import { AdminApp } from '@fangcha/vue/app-admin'
-import { AuthFrontendPlugin, MySession } from '@fangcha/vue/auth'
+import { MySession, AuthPluginForClient } from '@fangcha/vue/auth'
 import ClientListView from './views/client/ClientListView'
 import MyClientListView from './views/client/MyClientListView'
 import ClientDetailView from './views/client/ClientDetailView'
@@ -15,7 +15,7 @@ const _fcApp = new AdminApp({
 
   homeView: HomeView,
 
-  plugins: [AuthFrontendPlugin()],
+  plugins: [AuthPluginForClient()],
 
   loginUrl: KitAuthApis.RedirectLogin.route,
   logoutUrl: KitAuthApis.RedirectLogout.route,
