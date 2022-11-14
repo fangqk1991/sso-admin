@@ -33,7 +33,7 @@ const app = new WebApp({
         retainedUserData: AuthConfig.WebAuth.retainedUserData,
         accountServer: new AccountServer({
           database: MyDatabase.ssoDB,
-          ...AuthConfig.WebAuth.accountTableOptions,
+          ...AuthConfig.accountTableOptions,
         }),
       },
     }),

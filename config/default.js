@@ -23,14 +23,14 @@ module.exports = {
       tableName_SsoClient: 'fc_sso_client',
       tableName_UserAuth: 'fc_user_auth',
     },
+    accountTableOptions: {
+      tableName_Account: 'fc_account',
+      tableName_AccountCarrier: 'fc_account_carrier',
+      tableName_AccountCarrierExtras: 'fc_account_carrier_extras',
+    },
     WebAuth: {
       retainedUserData: {
         // 'admin@example.com': 'admin',
-      },
-      accountTableOptions: {
-        tableName_Account: 'fc_account',
-        tableName_AccountCarrier: 'fc_account_carrier',
-        tableName_AccountCarrierExtras: 'fc_account_carrier_extras',
       },
     },
   },
