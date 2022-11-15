@@ -1,8 +1,6 @@
 import { AuthConfig } from '../AuthConfig'
 import { GlobalAppConfig } from 'fc-config'
 import { WebAuthSdkPlugin } from '@fangcha/backend-kit/lib/auth'
-import { AccountServer } from '@fangcha/account'
-import { MyDatabase } from '../services/MyDatabase'
 import { AuthMode } from '@fangcha/account/lib/common/models'
 import { WebApp } from '@fangcha/backend-kit/lib/router'
 import { SsoAdminPlugin } from '@fangcha/sso-server/lib/admin-sdk'
@@ -31,10 +29,6 @@ const app = new WebApp({
       authMode: AuthMode.Simple,
       simpleAuth: {
         retainedUserData: AuthConfig.WebAuth.retainedUserData,
-        accountServer: new AccountServer({
-          database: MyDatabase.ssoDB,
-          ...AuthConfig.accountTableOptions,
-        }),
       },
     }),
   ],
