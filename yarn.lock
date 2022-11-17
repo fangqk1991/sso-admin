@@ -944,10 +944,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fangcha/account@^0.12.0":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@fangcha/account/-/account-0.12.0.tgz#23bf005a69323c0befdc80c0489f6c7efd569a42"
-  integrity sha512-S7ne7m0r0b59pZ6pMfAWuEi0SpigJKeprwnYOWoRNhEao+lYH/290M9AcJSxQ4SawRzHFYDBPb8A4Po4UMIeBQ==
+"@fangcha/account@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@fangcha/account/-/account-0.13.0.tgz#92ccf4cecb720ce85c86fce2987c3e06b33e28ac"
+  integrity sha512-cWutdiJh0uooL+Wflqy9YBo8QQDro/S5OM5CPH1VvAdzSQdldkOc9n+KZZ7t/mATmAW4ZlJHkPHzApKBAk74vg==
   dependencies:
     bcrypt "^5.1.0"
 
@@ -988,10 +988,10 @@
   dependencies:
     "@fangcha/app-error" "^1.1.0"
 
-"@fangcha/backend-kit@^0.41.0":
-  version "0.41.0"
-  resolved "https://registry.yarnpkg.com/@fangcha/backend-kit/-/backend-kit-0.41.0.tgz#369f73e730acfe8c0695723102953daad8417da4"
-  integrity sha512-EHtQoajxlovWbhzZnnJoB4X9Jaj8wm15Ca07INgXRIQHLm/G5J0YrZuMBGCiRO6GmVPAdJqxKFHbiOBoQNacqw==
+"@fangcha/backend-kit@^0.45.0":
+  version "0.45.0"
+  resolved "https://registry.yarnpkg.com/@fangcha/backend-kit/-/backend-kit-0.45.0.tgz#0b0ec9b1ad537d706fdc114df45c21c0bdf079ba"
+  integrity sha512-EzEZ44BKt8RZo1IJJaCNeKEQDReuTXm4rY30dbRiURj0voRp+FB37l6I7+N4gZQ9HQKVpmfLx3P/VXoLeDXIJA==
 
 "@fangcha/eslint@^0.3.2":
   version "0.3.2"
@@ -1028,15 +1028,15 @@
     lodash "^4.17.15"
     tslib "^2.3.1"
 
-"@fangcha/router@^0.20.0":
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/@fangcha/router/-/router-0.20.0.tgz#0ddda2693db3615ff6569fde9bd3506630e1c0c9"
-  integrity sha512-jPZeogxgv0GB37jiXJUK4XZUvN6aPO0e6x+LOpoAZ8iITb/JdQLzIK9irAnmV56z1VkKC6Ixo+Aiea+PFnDqkA==
+"@fangcha/router@^0.22.0":
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/@fangcha/router/-/router-0.22.0.tgz#b73cc28574f6a0a821c202c9a2fb4cd99995b752"
+  integrity sha512-039Gb1V+RvodTEpYOiAb8QXO0rE1vEz5CEGxMOOTMOC+Ss1d+XqmlBaf7Ijn5vWidLfFnIZIkG/aQAZKIZSBZw==
 
-"@fangcha/sso-server@^0.17.0":
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/@fangcha/sso-server/-/sso-server-0.17.0.tgz#4f6ae979dbb00befdcaa2a7759e624d4472dcb61"
-  integrity sha512-fLRVeEoFbgBWVF2nj+QU+hklZCIBQmqtoXKVcL4tsoVUDpXKL6jdScv1DeFcZpZucYlnzLSNCZXDF4U8KXPk7w==
+"@fangcha/sso-server@^0.18.0":
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/@fangcha/sso-server/-/sso-server-0.18.0.tgz#c9bc45a56f1056c3fd9b9a3e9d9a73a5b47ae68e"
+  integrity sha512-RX6OLA9Im5OdRPjAuo4kUWWDp3HaoeFxB56wmpBzfZT026Kpu2gmKmVvSgH2Ht8qjp5d09+fYFlrevXWtTAERw==
   dependencies:
     oauth2-server "^3.1.1"
 
@@ -1054,10 +1054,10 @@
     tslib "^2.3.1"
     uuid "^3.3.3"
 
-"@fangcha/vue@^0.53.0":
-  version "0.53.0"
-  resolved "https://registry.yarnpkg.com/@fangcha/vue/-/vue-0.53.0.tgz#3e99bc3bcbb65834cc00487f9d850b5529c303f2"
-  integrity sha512-u5+agNywHAcBl779DujzdsxI2zZ0b8+PCsweRVFER1DGXYhJZOYh2teOzKd+PNt7ipiDFLg+G3kKdvs5IaB3RQ==
+"@fangcha/vue@^0.57.0":
+  version "0.57.0"
+  resolved "https://registry.yarnpkg.com/@fangcha/vue/-/vue-0.57.0.tgz#88f712b5c8233d04a07c25e2ffd2d3da25d55f4c"
+  integrity sha512-DvglwGK06xr07uwtNn//3POwyRMDyFCwmtWSWpMrRJGoGaVrHnIj2VboyPJPiSl8RVDObbZHP1zP+bQLtKWEfg==
   dependencies:
     "@popperjs/core" "^2.11.5"
     bootstrap "^5.1.3"

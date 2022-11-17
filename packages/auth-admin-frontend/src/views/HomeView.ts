@@ -1,6 +1,6 @@
 import { Component, ViewController } from '@fangcha/vue'
 import { MyAxios } from '@fangcha/vue/basic'
-import { RetainedHealthApis } from '@fangcha/router/lib/apis'
+import { RetainedHealthApis } from '@fangcha/backend-kit/lib/common/apis'
 
 @Component({
   template: `
