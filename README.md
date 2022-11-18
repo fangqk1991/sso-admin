@@ -53,3 +53,7 @@ docker run -d --restart=unless-stopped \
 | `DB_Table_Account` | `fc_account`                | Account 表名 |
 | `DB_Table_AccountCarrier` | `fc_account_carrier`        | AccountCarrier 表名 |
 | `DB_Table_AccountCarrierExtras` | `fc_account_carrier_extras` | AccountCarrierExtras 表名 |
+| `FE_appName` | `Fangcha SSO Admin`                   | 登录页应用名                   |
+| `FE_background` | `linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)`                         | 登录页背景                    |
+| `FE_logoCss` | `linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)` | 登录页 Logo 样式              |
+| `FE_navBackground` | `#EA3323` | 应用导航栏背景              |

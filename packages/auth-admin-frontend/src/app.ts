@@ -1,5 +1,5 @@
 import { AdminApp } from '@fangcha/vue/app-admin'
-import { MySession, AuthPluginForClient } from '@fangcha/vue/auth'
+import { AuthPluginForClient, MySession } from '@fangcha/vue/auth'
 import ClientListView from './views/client/ClientListView'
 import MyClientListView from './views/client/MyClientListView'
 import ClientDetailView from './views/client/ClientDetailView'
@@ -22,6 +22,10 @@ const _fcApp = new AdminApp({
 
   reloadUserInfo: async (): Promise<VisitorInfo> => {
     await MySession.reloadSessionInfo()
+    const navBackground = MySession.config['navBackground']
+    if (navBackground) {
+      _fcApp.style.appHeader!.background = navBackground
+    }
     const email = MySession.curUser?.email || ''
     return {
       iamId: 0,

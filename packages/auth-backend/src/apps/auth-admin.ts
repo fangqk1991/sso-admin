@@ -6,6 +6,7 @@ import { WebApp } from '@fangcha/backend-kit/lib/router'
 import { SsoAdminPlugin } from '@fangcha/sso-server/lib/admin-sdk'
 import { MyAccountServer } from '../services/MyAccountServer'
 import { MyClientManager } from '../services/MyClientManager'
+import { _FangchaState } from '@fangcha/backend-kit'
 
 const app = new WebApp({
   env: GlobalAppConfig.Env,
@@ -33,7 +34,9 @@ const app = new WebApp({
     }),
   ],
 
-  appDidLoad: async () => {},
+  appDidLoad: async () => {
+    _FangchaState.frontendConfig = AuthConfig.frontendConfig
+  },
   checkHealth: async () => {},
 })
 app.launch()

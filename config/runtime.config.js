@@ -32,5 +32,11 @@ module.exports = {
     WebAuth: {
       retainedUserData: retainedUserData,
     },
+    frontendConfig: {
+      appName: envData.FE_appName,
+      background: envData.FE_background,
+      logoCss: envData.FE_logoCss,
+      navBackground: envData.FE_navBackground,
+    },
   },
 }
