@@ -988,10 +988,10 @@
   dependencies:
     "@fangcha/app-error" "^1.1.0"
 
-"@fangcha/backend-kit@^0.45.0":
-  version "0.45.0"
-  resolved "https://registry.yarnpkg.com/@fangcha/backend-kit/-/backend-kit-0.45.0.tgz#0b0ec9b1ad537d706fdc114df45c21c0bdf079ba"
-  integrity sha512-EzEZ44BKt8RZo1IJJaCNeKEQDReuTXm4rY30dbRiURj0voRp+FB37l6I7+N4gZQ9HQKVpmfLx3P/VXoLeDXIJA==
+"@fangcha/backend-kit@^0.47.0":
+  version "0.47.0"
+  resolved "https://registry.yarnpkg.com/@fangcha/backend-kit/-/backend-kit-0.47.0.tgz#e30b287108be70b3f16e760b84ee248f5508078a"
+  integrity sha512-WuNvbc1P3SSZZK8LCZ+HoMSjek4Wx0wNSCldYNww/XcopOfmRcHFgRgDimv//mEd4w9ubw+I3vAcbR/0CQme/g==
 
 "@fangcha/eslint@^0.3.2":
   version "0.3.2"
@@ -1054,10 +1054,10 @@
     tslib "^2.3.1"
     uuid "^3.3.3"
 
-"@fangcha/vue@^0.58.0":
-  version "0.58.0"
-  resolved "https://registry.yarnpkg.com/@fangcha/vue/-/vue-0.58.0.tgz#1c31b3859b9de37a7b2fa432baea2f8f03ce4351"
-  integrity sha512-FjoekZ87XHve1km86uLClIGd+4ydTpm1v/BrKG0IaooBqIx23bzOBhZg1gNNkzZUBRO6yvlXyK7WN1mNkEzaGQ==
+"@fangcha/vue@^0.65.2":
+  version "0.65.2"
+  resolved "https://registry.yarnpkg.com/@fangcha/vue/-/vue-0.65.2.tgz#8e98406ddcb68f679b5dd135a61dd2a754cc7fdd"
+  integrity sha512-TAP9XExiB9hYG8xeS2ctQT7sA8S1oRGiT25HSAR1qXO2997PgaREsXqd4DSfa0FUlTXJCvrFyeRNohWuIFLnQw==
   dependencies:
     "@popperjs/core" "^2.11.5"
     bootstrap "^5.1.3"
