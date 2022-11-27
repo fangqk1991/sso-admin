@@ -1,7 +1,6 @@
 import { AuthConfig } from '../AuthConfig'
 import { GlobalAppConfig } from 'fc-config'
 import { WebAuthSdkPlugin } from '@fangcha/backend-kit/lib/auth'
-import { AuthMode } from '@fangcha/account/lib/common/models'
 import { WebApp } from '@fangcha/backend-kit/lib/router'
 import { SsoAdminPlugin } from '@fangcha/sso-server/lib/admin-sdk'
 import { MyAccountServer } from '../services/MyAccountServer'
@@ -27,15 +26,19 @@ const app = new WebApp({
       accountServer: MyAccountServer,
     }),
     WebAuthSdkPlugin({
-      authMode: AuthMode.Simple,
+      authMode: AuthConfig.WebAuth.authMode,
       simpleAuth: {
         retainedUserData: AuthConfig.WebAuth.retainedUserData,
       },
+      ssoAuth: AuthConfig.WebAuth.oauthConfig,
     }),
   ],
 
   appDidLoad: async () => {
-    _FangchaState.frontendConfig = AuthConfig.frontendConfig
+    _FangchaState.frontendConfig = {
+      ...AuthConfig.frontendConfig,
+      authMode: AuthConfig.WebAuth.authMode,
+    }
   },
   checkHealth: async () => {},
 })

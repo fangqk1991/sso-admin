@@ -1,3 +1,5 @@
+import { SsoPlugin } from '@fangcha/vue/app'
+import { FrontendPluginProtocol } from '@fangcha/vue/basic'
 import { AdminApp } from '@fangcha/vue/app-admin'
 import { AuthPluginForClient, MySession } from '@fangcha/vue/auth'
 import ClientListView from './views/client/ClientListView'
@@ -7,6 +9,7 @@ import { KitAuthApis } from '@fangcha/backend-kit/lib/apis'
 import { I18nCode, VisitorInfo } from '@fangcha/tools'
 import { HomeView } from './views/HomeView'
 import { AccountListView } from './views/account/AccountListView'
+import { AuthMode } from '@fangcha/account/lib/common/models'
 
 MySession.defaultRedirectUri = '/'
 
@@ -15,18 +18,34 @@ const _fcApp = new AdminApp({
 
   homeView: HomeView,
 
-  plugins: [AuthPluginForClient()],
-
   loginUrl: KitAuthApis.RedirectLogin.route,
   logoutUrl: KitAuthApis.RedirectLogout.route,
 
-  reloadUserInfo: async (): Promise<VisitorInfo> => {
-    await MySession.reloadSessionInfo()
-    const navBackground = MySession.config['navBackground']
+  plugins: async () => {
+    await _fcApp.session.reloadSessionInfo()
+    const plugins: FrontendPluginProtocol[] = []
+    const authMode = _fcApp.session.config['authMode'] as AuthMode
+    switch (authMode) {
+      case AuthMode.Simple:
+        plugins.push(AuthPluginForClient())
+        _fcApp.setSession(MySession)
+        break
+      case AuthMode.SSO:
+        plugins.push(SsoPlugin())
+        break
+    }
+    return plugins
+  },
+
+  appDidLoad: async () => {
+    const navBackground = _fcApp.session.config['navBackground']
     if (navBackground) {
       _fcApp.style.appHeader!.background = navBackground
     }
-    const email = MySession.curUser?.email || ''
+  },
+
+  reloadUserInfo: async (): Promise<VisitorInfo> => {
+    const email = _fcApp.session.curUser?.email || ''
     return {
       iamId: 0,
       email: email,

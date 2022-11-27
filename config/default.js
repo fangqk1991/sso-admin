@@ -29,8 +29,20 @@ module.exports = {
       tableName_AccountCarrierExtras: 'fc_account_carrier_extras',
     },
     WebAuth: {
+      authMode: 'simple',
       retainedUserData: {
         // 'admin@example.com': 'admin',
+      },
+      oauthConfig: {
+        baseURL: 'https://sso.example.com',
+        clientId: '<clientId>',
+        clientSecret: '<clientSecret>',
+        authorizePath: '/api/v1/oauth/authorize',
+        tokenPath: '/api/v1/oauth/token',
+        logoutPath: '/api/v1/logout',
+        scope: 'basic',
+        callbackUri: 'http://localhost:2599/api/v1/handleSSO',
+        userInfoURL: 'https://sso.example.com/api/v1/oauth/user-info',
       },
     },
     frontendConfig: {

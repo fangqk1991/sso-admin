@@ -34,7 +34,9 @@ docker run -d --restart=unless-stopped \
 ```
 
 ### 登录鉴权
-* 环境变量传递的 `Auth_User`、`Auth_Password` 即用于登录的账号密码
+* 可以使用普通认证方式或对接标准 SSO
+* 普通认证方式(authMode = 'simple'): 环境变量传递的 `Auth_User`、`Auth_Password` 即用于登录的账号密码
+* SSO(authMode = 'sso'): 传递 adminSSO_xxx 环境变量，对接已有的单点登录系统
 
 ### 环境变量说明
 | 环境变量 | 缺省值                     | 说明 |
@@ -46,8 +48,18 @@ docker run -d --restart=unless-stopped \
 | `DB_Name` | `fangcha_sso`           | MySQL 数据库名 |
 | `DB_User` | `root`                  | MySQL 用户名 |
 | `DB_Password` |                         | MySQL 用户密码 |
+| `authMode` | `simple` | 鉴权模式，simple 或 sso |
 | `Auth_User` |                         | 临时鉴权用户名 |
 | `Auth_Password` |                         | 临时鉴权用户密码 |
+| `adminSSO_baseURL` |  | SSO baseURL |
+| `adminSSO_clientId` | `<clientId>` | SSO clientId |
+| `adminSSO_clientSecret` | `<clientSecret>` | SSO clientSecret |
+| `adminSSO_authorizePath` | `/api/v1/oauth/authorize` | SSO authorizePath |
+| `adminSSO_tokenPath` | `/api/v1/oauth/token` | SSO tokenPath |
+| `adminSSO_logoutPath` | `/api/v1/logout` | SSO logoutPath |
+| `adminSSO_scope` | `basic` | SSO scope |
+| `adminSSO_callbackUri` | `http://localhost:2599/api/v1/handleSSO` | SSO callbackUri |
+| `adminSSO_userInfoURL` |  | SSO userInfoURL |
 | `DB_Table_SsoClient` | `fc_sso_client`             | SsoClient 表名 |
 | `DB_Table_UserAuth` | `fc_user_auth`              | UserAuth 表名 |
 | `DB_Table_Account` | `fc_account`                | Account 表名 |
