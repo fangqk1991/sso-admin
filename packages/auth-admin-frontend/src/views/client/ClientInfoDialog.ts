@@ -88,9 +88,12 @@ export class ClientInfoDialog extends TypicalDialog {
     super()
   }
 
-  static dialogForCreate() {
+  static dialogForCreate(data?: SsoClientParams) {
     const dialog = new ClientInfoDialog()
     dialog.title = '创建客户端信息'
+    if (data) {
+      dialog.client = JSON.parse(JSON.stringify(data))
+    }
     return dialog
   }
 

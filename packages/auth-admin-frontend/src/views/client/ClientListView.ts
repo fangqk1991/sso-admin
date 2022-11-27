@@ -26,7 +26,7 @@ import { SsoClientModel, SsoClientParams } from '@fangcha/sso-server/lib/common/
       <h2>客户端管理</h2>
       <el-form :inline="true" size="mini" @submit.prevent.native="onFilterUpdate">
         <el-form-item>
-          <el-button type="primary" size="mini" @click="onClickCreate">创建客户端</el-button>
+          <el-button type="primary" size="mini" @click="onClickCreate()">创建客户端</el-button>
         </el-form-item>
       </el-form>
       <el-form :inline="true" size="mini" @submit.prevent.native="onFilterUpdate">
@@ -87,9 +87,11 @@ import { SsoClientModel, SsoClientParams } from '@fangcha/sso-server/lib/common/
             <span>{{ scope.row.updateTime | ISO8601 }}</span>
           </template>
         </el-table-column>
-        <el-table-column label="操作">
+        <el-table-column label="操作" width="120px">
           <template slot-scope="scope">
-            <a href="javascript:" @click="onEditItem(scope.row)">编辑</a> |
+            <a class="text-success" href="javascript:" @click="onClickCreate(scope.row)">复制</a> |
+            <a href="javascript:" @click="onEditItem(scope.row)">编辑</a>
+            <br />
             <a href="javascript:" @click="onDeleteItem(scope.row)">删除</a>
           </template>
         </el-table-column>
@@ -144,8 +146,8 @@ export default class ClientListView extends ViewController {
     }
   }
 
-  onClickCreate() {
-    const dialog = ClientInfoDialog.dialogForCreate()
+  onClickCreate(item?: SsoClientModel) {
+    const dialog = ClientInfoDialog.dialogForCreate(item)
     dialog.show(async (params: SsoClientParams) => {
       const request = MyAxios(new CommonAPI(SsoClientApis.ClientCreate))
       request.setBodyData(params)
