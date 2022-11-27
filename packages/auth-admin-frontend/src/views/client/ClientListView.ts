@@ -1,25 +1,16 @@
-import {
-  Component,
-  ConfirmDialog,
-  MySelect,
-  MyTableView,
-  MyTagsPanel,
-  TableViewProtocol,
-  ViewController,
-} from '@fangcha/vue'
+import { Component, GridView, MyTableView, TableViewProtocol, ViewController, } from '@fangcha/vue'
 import { MyAxios } from '@fangcha/vue/basic'
 import { CommonAPI } from '@fangcha/app-request'
 import { ClientInfoDialog } from './ClientInfoDialog'
 import { MessageBox } from 'element-ui'
-import { RouteHelper } from '../../extensions/RouteHelper'
 import { SsoClientApis } from '@fangcha/sso-server/lib/common/admin-api'
 import { SsoClientModel, SsoClientParams } from '@fangcha/sso-server/lib/common/models'
+import { ClientCard } from './ClientCard'
 
 @Component({
   components: {
-    'my-table-view': MyTableView,
-    'my-select': MySelect,
-    'my-tags-panel': MyTagsPanel,
+    'grid-view': GridView,
+    'client-card': ClientCard,
   },
   template: `
     <div>
@@ -38,69 +29,13 @@ import { SsoClientModel, SsoClientParams } from '@fangcha/sso-server/lib/common/
           </el-input>
         </el-form-item>
       </el-form>
-      <my-table-view ref="tableView" :delegate="delegate">
-        <el-table-column prop="name" label="名称">
-          <template slot-scope="scope">
-            <router-link :to="RouteHelper.to_ClientDetailView(scope.row)">
-              <span>clientId: {{ scope.row.clientId }}</span>
-              <br />
-              <span>应用名: {{ scope.row.name }}</span>
-              <el-tooltip v-if="scope.row.autoGranted" class="item" effect="dark" content="无需用户点击，自动获得授权 (针对可信应用)" placement="bottom">
-                <el-tag size="mini" type="success">
-                  特权应用
-                  <span class="el-icon-question" />
-                </el-tag>
-              </el-tooltip>
-              <el-tooltip v-if="scope.row.isPartner" class="item" effect="dark" content="合作商可以创建公司" placement="bottom">
-                <el-tag size="mini" type="danger">
-                  合作商
-                  <span class="el-icon-question" />
-                </el-tag>
-              </el-tooltip>
-            </router-link>
-          </template>
-        </el-table-column>
-        <el-table-column label="grants">
-          <template slot-scope="scope">
-            <my-tags-panel :values="scope.row.grantList" />
-          </template>
-        </el-table-column>
-        <el-table-column label="scopes">
-          <template slot-scope="scope">
-            <my-tags-panel :values="scope.row.scopeList" />
-          </template>
-        </el-table-column>
-        <el-table-column label="redirectUris" min-width="200%">
-          <template slot-scope="scope">
-            <my-tags-panel :values="scope.row.redirectUriList" />
-          </template>
-        </el-table-column>
-        <el-table-column label="管理员">
-          <template slot-scope="scope">
-            <my-tags-panel :values="scope.row.powerUsers" />
-          </template>
-        </el-table-column>
-        <el-table-column label="创建时间 / 更新时间">
-          <template slot-scope="scope">
-            <span>{{ scope.row.createTime | ISO8601 }}</span>
-            <br />
-            <span>{{ scope.row.updateTime | ISO8601 }}</span>
-          </template>
-        </el-table-column>
-        <el-table-column label="操作" width="120px">
-          <template slot-scope="scope">
-            <a class="text-success" href="javascript:" @click="onClickCreate(scope.row)">复制</a> |
-            <a href="javascript:" @click="onEditItem(scope.row)">编辑</a>
-            <br />
-            <a href="javascript:" @click="onDeleteItem(scope.row)">删除</a>
-          </template>
-        </el-table-column>
-      </my-table-view>
+      <grid-view ref="tableView" :delegate="delegate">
+        <client-card slot-scope="scope" :data="scope.data" @change="reloadData" />
+      </grid-view>
     </div>
   `,
 })
 export default class ClientListView extends ViewController {
-  RouteHelper = RouteHelper
   filterParams: any = this.initFilterParams(true)
 
   initFilterParams(useQuery = false) {
@@ -120,6 +55,10 @@ export default class ClientListView extends ViewController {
 
   resetFilter(useQuery = false) {
     this.filterParams = this.initFilterParams(useQuery)
+    this.tableView().reloadData()
+  }
+
+  reloadData() {
     this.tableView().reloadData()
   }
 
@@ -146,8 +85,8 @@ export default class ClientListView extends ViewController {
     }
   }
 
-  onClickCreate(item?: SsoClientModel) {
-    const dialog = ClientInfoDialog.dialogForCreate(item)
+  onClickCreate() {
+    const dialog = ClientInfoDialog.dialogForCreate()
     dialog.show(async (params: SsoClientParams) => {
       const request = MyAxios(new CommonAPI(SsoClientApis.ClientCreate))
       request.setBodyData(params)
@@ -157,29 +96,6 @@ export default class ClientListView extends ViewController {
         confirmButtonText: '关闭',
         showClose: false,
       })
-    })
-  }
-
-  onEditItem(item: SsoClientModel) {
-    const dialog = ClientInfoDialog.dialogForEdit(item)
-    dialog.show(async (params: SsoClientParams) => {
-      const request = MyAxios(new CommonAPI(SsoClientApis.ClientInfoUpdate, item.clientId))
-      request.setBodyData(params)
-      await request.quickSend()
-      this.$message.success('更新成功')
-      this.tableView().reloadData()
-    })
-  }
-
-  onDeleteItem(item: SsoClientModel) {
-    const dialog = ConfirmDialog.strongDialog()
-    dialog.title = `请确认`
-    dialog.content = `确定删除此客户端 [${item.name}] 吗`
-    dialog.show(async () => {
-      const request = MyAxios(new CommonAPI(SsoClientApis.ClientDelete, item.clientId))
-      await request.quickSend()
-      this.$message.success('删除成功')
-      this.tableView().reloadData()
     })
   }
 }
