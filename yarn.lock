@@ -1034,11 +1034,6 @@
     lodash "^4.17.15"
     tslib "^2.3.1"
 
-"@fangcha/router@^0.22.0":
-  version "0.22.0"
-  resolved "https://registry.yarnpkg.com/@fangcha/router/-/router-0.22.0.tgz#b73cc28574f6a0a821c202c9a2fb4cd99995b752"
-  integrity sha512-039Gb1V+RvodTEpYOiAb8QXO0rE1vEz5CEGxMOOTMOC+Ss1d+XqmlBaf7Ijn5vWidLfFnIZIkG/aQAZKIZSBZw==
-
 "@fangcha/router@^0.24.0":
   version "0.24.0"
   resolved "https://registry.yarnpkg.com/@fangcha/router/-/router-0.24.0.tgz#584a14fe4f123f0973daedb6fddc09a05270f1da"

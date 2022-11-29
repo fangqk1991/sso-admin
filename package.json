@@ -16,7 +16,6 @@
     "@fangcha/assert": "^1.1.0",
     "@fangcha/backend-kit": "^0.50.0",
     "@fangcha/logger": "^0.4.0",
-    "@fangcha/router": "^0.22.0",
     "@fangcha/sso-server": "^0.18.0",
     "@fangcha/swagger": "^0.1.1",
     "@fangcha/tools": "^1.22.0",
