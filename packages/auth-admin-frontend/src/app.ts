@@ -17,6 +17,7 @@ const _fcApp = new AdminApp({
 
   homeView: HomeView,
 
+  refreshIfVersionChanged: true,
   loginUrl: KitAuthApis.RedirectLogin.route,
   logoutUrl: KitAuthApis.RedirectLogout.route,
 
