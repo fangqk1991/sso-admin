@@ -26,6 +26,30 @@ export class TableManager {
   public tableName_UserAuth() {
     return this.prefix + 'fc_user_auth'
   }
+
+  public tableName_App() {
+    return this.prefix + 'fc_app'
+  }
+
+  public tableName_AppAccess() {
+    return this.prefix + 'fc_app_access'
+  }
+
+  public tableName_Group() {
+    return this.prefix + 'fc_group'
+  }
+
+  public tableName_GroupAccess() {
+    return this.prefix + 'fc_group_access'
+  }
+
+  public tableName_GroupMember() {
+    return this.prefix + 'fc_group_member'
+  }
+
+  public tableName_GroupPermission() {
+    return this.prefix + 'fc_group_permission'
+  }
 }
 
 export const MyTableManager = new TableManager(AuthConfig.sqlTablePrefix)

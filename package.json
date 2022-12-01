@@ -15,6 +15,7 @@
     "@fangcha/logger": "^0.4.0",
     "@fangcha/router": "^0.25.0",
     "@fangcha/sso-server": "^0.21.0",
+    "@fangcha/tools": "^1.22.0",
     "fc-config": "^0.13.0",
     "fc-feed": "^0.19.0",
     "fc-model": "^0.5.0",
@@ -36,7 +37,7 @@
   "devDependencies": {
     "@fangcha/eslint": "^0.3.2",
     "@fangcha/generator": "^0.1.1",
-    "@fangcha/vue": "^0.72.2",
+    "@fangcha/vue": "^0.74.0",
     "@fangcha/webpack": "^0.10.0",
     "@types/ali-oss": "^6.0.10",
     "@types/assert": "^1.4.6",
