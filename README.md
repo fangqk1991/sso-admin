@@ -48,6 +48,7 @@ docker run -d --restart=unless-stopped \
 | `DB_Name` | `fangcha_sso`           | MySQL 数据库名 |
 | `DB_User` | `root`                  | MySQL 用户名 |
 | `DB_Password` |                         | MySQL 用户密码 |
+| `DB_tableNamePrefix` | | 数据表前缀 |
 | `authMode` | `simple` | 鉴权模式，simple 或 sso |
 | `Auth_User` |                         | 临时鉴权用户名 |
 | `Auth_Password` |                         | 临时鉴权用户密码 |
@@ -60,11 +61,6 @@ docker run -d --restart=unless-stopped \
 | `adminSSO_scope` | `basic` | SSO scope |
 | `adminSSO_callbackUri` | `http://localhost:2599/api/v1/handleSSO` | SSO callbackUri |
 | `adminSSO_userInfoURL` |  | SSO userInfoURL |
-| `DB_Table_SsoClient` | `fc_sso_client`             | SsoClient 表名 |
-| `DB_Table_UserAuth` | `fc_user_auth`              | UserAuth 表名 |
-| `DB_Table_Account` | `fc_account`                | Account 表名 |
-| `DB_Table_AccountCarrier` | `fc_account_carrier`        | AccountCarrier 表名 |
-| `DB_Table_AccountCarrierExtras` | `fc_account_carrier_extras` | AccountCarrierExtras 表名 |
 | `FE_appName` | `Fangcha SSO Admin`                   | 登录页应用名                   |
 | `FE_background` | `linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)`                         | 登录页背景                    |
 | `FE_logoCss` | `linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)` | 登录页 Logo 样式              |
