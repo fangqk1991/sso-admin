@@ -58,13 +58,13 @@ const _fcApp = new AdminApp({
 
   sidebarNodes: [
     {
-      titleEn: '授权应用',
-      titleZh: '授权应用',
+      titleEn: '应用管理',
+      titleZh: '应用管理',
       icon: 'el-icon-s-grid',
       links: [
         {
-          titleEn: '客户端管理',
-          titleZh: '客户端管理',
+          titleEn: 'SSO 客户端',
+          titleZh: 'SSO 客户端',
           path: '/v1/client',
         },
       ],

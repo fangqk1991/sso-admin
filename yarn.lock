@@ -944,11 +944,12 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fangcha/account@^0.13.0":
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/@fangcha/account/-/account-0.13.0.tgz#92ccf4cecb720ce85c86fce2987c3e06b33e28ac"
-  integrity sha512-cWutdiJh0uooL+Wflqy9YBo8QQDro/S5OM5CPH1VvAdzSQdldkOc9n+KZZ7t/mATmAW4ZlJHkPHzApKBAk74vg==
+"@fangcha/account@^0.14.0":
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/@fangcha/account/-/account-0.14.0.tgz#00132e686050082b3565da0e33f0485bba331645"
+  integrity sha512-iY7R9NOqt84CPSkViJIpb8Blsg7LiShrZOsCjyqSggGm3R1ezzrgkwkOp19XX4wi99/repnPk2sH4aq9X2LBEg==
   dependencies:
+    "@types/bcrypt" "^5.0.0"
     bcrypt "^5.1.0"
 
 "@fangcha/ali-oss@^1.2.0":
@@ -1050,10 +1051,10 @@
     koa-body "^5.0.0"
     koa-compose "^4.1.0"
 
-"@fangcha/sso-server@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@fangcha/sso-server/-/sso-server-0.18.0.tgz#c9bc45a56f1056c3fd9b9a3e9d9a73a5b47ae68e"
-  integrity sha512-RX6OLA9Im5OdRPjAuo4kUWWDp3HaoeFxB56wmpBzfZT026Kpu2gmKmVvSgH2Ht8qjp5d09+fYFlrevXWtTAERw==
+"@fangcha/sso-server@^0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@fangcha/sso-server/-/sso-server-0.21.0.tgz#31cd3af1fffe0b4579d3808b1751c9f4b2221fe7"
+  integrity sha512-cng+FFzlbSZhh77iN1W4xBp0y7BNfjP5YNdZWzyUUf4O5q8UEr3FFKswlXZOTDLB6FJbjh0FsiZSjvYVgfxf4A==
   dependencies:
     oauth2-server "^3.1.1"
 
@@ -1317,6 +1318,13 @@
   version "1.5.6"
   resolved "https://registry.yarnpkg.com/@types/assert/-/assert-1.5.6.tgz#a8b5a94ce5fb8f4ba65fdc37fc9507609114189e"
   integrity sha512-Y7gDJiIqb9qKUHfBQYOWGngUpLORtirAVPuj/CWJrU2C6ZM4/y3XLwuwfGMF8s7QzW746LQZx23m0+1FSgjfug==
+
+"@types/bcrypt@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@types/bcrypt/-/bcrypt-5.0.0.tgz#a835afa2882d165aff5690893db314eaa98b9f20"
+  integrity sha512-agtcFKaruL8TmcvqbndlqHPSJgsolhf/qPWchFlgnW1gECTN/nKbFcoFnvKAQRFfKbh+BO6A3SWdJu9t+xF3Lw==
+  dependencies:
+    "@types/node" "*"
 
 "@types/bcryptjs@^2.4.2":
   version "2.4.2"

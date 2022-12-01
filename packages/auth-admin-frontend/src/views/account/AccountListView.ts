@@ -10,7 +10,7 @@ import { MyAxios } from '@fangcha/vue/basic'
 import { CommonAPI } from '@fangcha/app-request'
 import { AccountCreateDialog } from './AccountCreateDialog'
 import { CarrierType, FullAccountModel } from '@fangcha/account/lib/common/models'
-import { AdminAccountApis } from '@fangcha/account/lib/common/admin-api'
+import { Admin_AccountApis } from '@web/auth-common/admin-api'
 
 @Component({
   components: {
@@ -102,7 +102,7 @@ export class AccountListView extends ViewController {
           ...retainParams,
           ...this.filterParams,
         }
-        const request = MyAxios(new CommonAPI(AdminAccountApis.AccountPageDataGet))
+        const request = MyAxios(new CommonAPI(Admin_AccountApis.AccountPageDataGet))
         request.setQueryParams(params)
         return request.quickSend()
       },
@@ -115,7 +115,7 @@ export class AccountListView extends ViewController {
   onClickCreate() {
     const dialog = AccountCreateDialog.dialogForCreate()
     dialog.show(async (params) => {
-      const request = MyAxios(new CommonAPI(AdminAccountApis.AccountCreate))
+      const request = MyAxios(new CommonAPI(Admin_AccountApis.AccountCreate))
       request.setBodyData(params)
       await request.quickSend()
       this.$message.success('创建成功')
@@ -127,7 +127,7 @@ export class AccountListView extends ViewController {
     const dialog = SimpleInputDialog.textInputDialog()
     dialog.title = '输入新密码'
     dialog.show(async (newPassword: string) => {
-      const request = MyAxios(new CommonAPI(AdminAccountApis.AccountPasswordReset, item.accountUid))
+      const request = MyAxios(new CommonAPI(Admin_AccountApis.AccountPasswordReset, item.accountUid))
       request.setBodyData({
         newPassword: newPassword
       })
@@ -141,7 +141,7 @@ export class AccountListView extends ViewController {
     const dialog = SimpleInputDialog.textInputDialog()
     dialog.title = '输入新邮箱'
     dialog.show(async (email: string) => {
-      const request = MyAxios(new CommonAPI(AdminAccountApis.AccountCarrierUpdate, item.accountUid, CarrierType.Email))
+      const request = MyAxios(new CommonAPI(Admin_AccountApis.AccountCarrierUpdate, item.accountUid, CarrierType.Email))
       request.setBodyData({
         carrierUid: email
       })
@@ -156,7 +156,7 @@ export class AccountListView extends ViewController {
     dialog.title = `请确认`
     dialog.content = `确定解绑此账号 Email[${item.email}] 吗`
     dialog.show(async () => {
-      const request = MyAxios(new CommonAPI(AdminAccountApis.AccountCarrierUnlink, item.accountUid, CarrierType.Email))
+      const request = MyAxios(new CommonAPI(Admin_AccountApis.AccountCarrierUnlink, item.accountUid, CarrierType.Email))
       await request.quickSend()
       this.$message.success('删除成功')
       this.tableView().reloadData()

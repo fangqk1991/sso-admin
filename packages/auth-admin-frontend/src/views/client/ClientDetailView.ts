@@ -7,7 +7,7 @@ import ClientUserAuthTable from './ClientUserAuthTable'
 import { MyAxios } from '@fangcha/vue/basic'
 import { NotificationCenter } from 'notification-center-js'
 import { SsoClientModel } from '@fangcha/sso-server/lib/common/models'
-import { SsoClientApis } from '@fangcha/sso-server/lib/common/admin-api'
+import { Admin_SsoClientApis } from '@web/auth-common/admin-api'
 
 @Component({
   components: {
@@ -47,7 +47,7 @@ export default class ClientDetailView extends ViewController {
   }
 
   async reloadInfo() {
-    const request = MyAxios(new CommonAPI(SsoClientApis.ClientInfoGet, this.clientId))
+    const request = MyAxios(new CommonAPI(Admin_SsoClientApis.ClientInfoGet, this.clientId))
     this.clientInfo = await request.quickSend()
   }
 

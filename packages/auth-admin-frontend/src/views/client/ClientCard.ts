@@ -4,8 +4,8 @@ import { RouteHelper } from '../../extensions/RouteHelper'
 import { ClientInfoDialog } from './ClientInfoDialog'
 import { MyAxios } from '@fangcha/vue/basic'
 import { CommonAPI } from '@fangcha/app-request'
-import { SsoClientApis } from '@fangcha/sso-server/lib/common/admin-api'
 import { MessageBox } from 'element-ui'
+import { Admin_SsoClientApis } from '@web/auth-common/admin-api'
 
 @Component({
   components: {
@@ -71,7 +71,7 @@ export class ClientCard extends ViewController {
   onClickCreate() {
     const dialog = ClientInfoDialog.dialogForCreate(this.data)
     dialog.show(async (params: SsoClientParams) => {
-      const request = MyAxios(new CommonAPI(SsoClientApis.ClientCreate))
+      const request = MyAxios(new CommonAPI(Admin_SsoClientApis.ClientCreate))
       request.setBodyData(params)
       const data = (await request.quickSend()) as SsoClientModel
       this.$emit('change')
@@ -85,7 +85,7 @@ export class ClientCard extends ViewController {
   onEditItem() {
     const dialog = ClientInfoDialog.dialogForEdit(this.data)
     dialog.show(async (params: SsoClientParams) => {
-      const request = MyAxios(new CommonAPI(SsoClientApis.ClientInfoUpdate, this.data.clientId))
+      const request = MyAxios(new CommonAPI(Admin_SsoClientApis.ClientInfoUpdate, this.data.clientId))
       request.setBodyData(params)
       await request.quickSend()
       this.$message.success('更新成功')
@@ -98,7 +98,7 @@ export class ClientCard extends ViewController {
     dialog.title = `请确认`
     dialog.content = `确定删除此客户端 [${this.data.name}] 吗`
     dialog.show(async () => {
-      const request = MyAxios(new CommonAPI(SsoClientApis.ClientDelete, this.data.clientId))
+      const request = MyAxios(new CommonAPI(Admin_SsoClientApis.ClientDelete, this.data.clientId))
       await request.quickSend()
       this.$message.success('删除成功')
 

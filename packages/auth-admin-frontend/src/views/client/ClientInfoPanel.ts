@@ -4,8 +4,8 @@ import { ClientInfoDialog } from './ClientInfoDialog'
 import { MyAxios } from '@fangcha/vue/basic'
 import { CommonAPI } from '@fangcha/app-request'
 import { NotificationCenter } from 'notification-center-js'
-import { SsoClientApis } from '@fangcha/sso-server/lib/common/admin-api'
 import { SsoClientModel, SsoClientParams } from '@fangcha/sso-server/lib/common/models'
+import { Admin_SsoClientApis } from '@web/auth-common/admin-api'
 
 @Component({
   components: {
@@ -60,7 +60,7 @@ export class ClientInfoPanel extends ViewController {
   onEditItem() {
     const dialog = ClientInfoDialog.dialogForEdit(this.client)
     dialog.show(async (params: SsoClientParams) => {
-      const request = MyAxios(new CommonAPI(SsoClientApis.ClientInfoUpdate, this.client.clientId))
+      const request = MyAxios(new CommonAPI(Admin_SsoClientApis.ClientInfoUpdate, this.client.clientId))
       request.setBodyData(params)
       await request.quickSend()
       this.$message.success('更新成功')

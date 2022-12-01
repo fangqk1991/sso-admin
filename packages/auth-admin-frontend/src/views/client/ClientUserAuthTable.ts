@@ -1,7 +1,7 @@
 import { Component, MyTableView, MyTagsPanel, Prop, TableViewProtocol, ViewController } from '@fangcha/vue'
 import { CommonAPI } from '@fangcha/app-request'
 import { MyAxios } from '@fangcha/vue/basic'
-import { SsoClientApis } from '@fangcha/sso-server/lib/common/admin-api'
+import { Admin_SsoClientApis } from '@web/auth-common/admin-api'
 
 @Component({
   components: {
@@ -70,7 +70,7 @@ export default class ClientUserAuthTable extends ViewController {
           ...retainParams,
           ...this.filterParams,
         }
-        const request = MyAxios(new CommonAPI(SsoClientApis.ClientAuthPageDataGet, this.clientId))
+        const request = MyAxios(new CommonAPI(Admin_SsoClientApis.ClientAuthPageDataGet, this.clientId))
         request.setQueryParams(params)
         return request.quickSend()
       },

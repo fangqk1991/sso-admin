@@ -2,10 +2,8 @@ import { AuthConfig } from '../AuthConfig'
 import { GlobalAppConfig } from 'fc-config'
 import { WebAuthSdkPlugin } from '@fangcha/backend-kit/lib/auth'
 import { WebApp } from '@fangcha/backend-kit/lib/router'
-import { SsoAdminPlugin } from '@fangcha/sso-server/lib/admin-sdk'
-import { MyAccountServer } from '../services/MyAccountServer'
-import { MyClientManager } from '../services/MyClientManager'
 import { _FangchaState } from '@fangcha/backend-kit'
+import { SsoAdminSpecDocItems } from './admin/SsoAdminSpecDocItems'
 
 const app = new WebApp({
   env: GlobalAppConfig.Env,
@@ -20,11 +18,8 @@ const app = new WebApp({
       jwtSecret: AuthConfig.adminJwtSecret,
     },
   },
+  mainDocItems: SsoAdminSpecDocItems,
   plugins: [
-    SsoAdminPlugin({
-      clientManager: MyClientManager,
-      accountServer: MyAccountServer,
-    }),
     WebAuthSdkPlugin({
       authMode: AuthConfig.WebAuth.authMode,
       simpleAuth: {

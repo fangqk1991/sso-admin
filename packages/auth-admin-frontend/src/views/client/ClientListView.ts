@@ -3,9 +3,9 @@ import { MyAxios } from '@fangcha/vue/basic'
 import { CommonAPI } from '@fangcha/app-request'
 import { ClientInfoDialog } from './ClientInfoDialog'
 import { MessageBox } from 'element-ui'
-import { SsoClientApis } from '@fangcha/sso-server/lib/common/admin-api'
 import { SsoClientModel, SsoClientParams } from '@fangcha/sso-server/lib/common/models'
 import { ClientCard } from './ClientCard'
+import { Admin_SsoClientApis } from '@web/auth-common/admin-api'
 
 @Component({
   components: {
@@ -14,7 +14,7 @@ import { ClientCard } from './ClientCard'
   },
   template: `
     <div>
-      <h2>客户端管理</h2>
+      <h2>SSO 客户端</h2>
       <el-form :inline="true" size="mini" @submit.prevent.native="onFilterUpdate">
         <el-form-item>
           <el-button type="primary" size="mini" @click="onClickCreate()">创建客户端</el-button>
@@ -75,7 +75,7 @@ export default class ClientListView extends ViewController {
           ...retainParams,
           ...this.filterParams,
         }
-        const request = MyAxios(new CommonAPI(SsoClientApis.ClientPageDataGet))
+        const request = MyAxios(new CommonAPI(Admin_SsoClientApis.ClientPageDataGet))
         request.setQueryParams(params)
         return request.quickSend()
       },
@@ -88,7 +88,7 @@ export default class ClientListView extends ViewController {
   onClickCreate() {
     const dialog = ClientInfoDialog.dialogForCreate()
     dialog.show(async (params: SsoClientParams) => {
-      const request = MyAxios(new CommonAPI(SsoClientApis.ClientCreate))
+      const request = MyAxios(new CommonAPI(Admin_SsoClientApis.ClientCreate))
       request.setBodyData(params)
       const data = (await request.quickSend()) as SsoClientModel
       this.tableView().reloadData()
