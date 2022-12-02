@@ -126,7 +126,6 @@ export class AppSpecsBuilder {
       const app = await this.makeHandler(ctx).prepareApp()
       const searcher = new MyPermissionServer.Group().fc_searcher()
       searcher.processor().addConditionKV('appid', app.appid)
-      searcher.processor().addSpecialCondition('department_id IS NOT NULL')
       const items = await searcher.queryAllFeeds()
       ctx.body = items.map((item) => item.toJSON())
     })

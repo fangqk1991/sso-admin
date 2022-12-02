@@ -43,10 +43,10 @@ import { Admin_AppApis } from '@web/auth-common/admin-api'
         </li>
         <li><hr /></li>
         <li>
-<!--          <router-link :to="clientDetailRoute">-->
-<!--            查看详情-->
-<!--          </router-link>-->
-<!--          |-->
+          <router-link :to="{ name: 'AppDetailView', params: { appid: data.appid } }">
+            查看详情
+          </router-link>
+          |
           <a class="text-success" href="javascript:" @click="onClickCreate()">复制</a>
           |
           <a href="javascript:" @click="onEditItem()">编辑</a>

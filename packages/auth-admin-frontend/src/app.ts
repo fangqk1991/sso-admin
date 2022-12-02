@@ -10,6 +10,7 @@ import { HomeView } from './views/HomeView'
 import { AccountListView } from './views/account/AccountListView'
 import { AuthMode } from '@fangcha/account/lib/common/models'
 import AppListView from './views/app/AppListView'
+import { AppDetailView } from './views/app/AppDetailView'
 
 MySession.defaultRedirectUri = '/'
 
@@ -108,6 +109,11 @@ const _fcApp = new AdminApp({
       path: '/v1/app',
       component: AppListView,
       name: 'AppListView',
+    },
+    {
+      path: '/v1/app/:appid',
+      component: AppDetailView,
+      name: 'AppDetailView',
     },
   ],
 })
