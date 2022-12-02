@@ -18,4 +18,21 @@ describe('Test AppHandler.test.ts', () => {
     })
     console.info(app.modelForClient())
   })
+
+  it(`generateApp user-system`, async () => {
+    const app = await MyPermissionServer.generateApp({
+      appid: 'user-system',
+      name: 'User System',
+      appType: AppType.Admin,
+      remarks: '',
+      configData: {},
+      permissionMeta: {
+        permissionKey: '*',
+        name: 'ALL',
+        description: '',
+      },
+      powerUserList: [],
+    })
+    console.info(app.modelForClient())
+  })
 })
