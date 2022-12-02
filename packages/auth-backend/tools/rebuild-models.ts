@@ -49,16 +49,20 @@ const generalDataSchemas: DBModelSchema[] = [
     tableName: 'fc_group_member',
     outputFile: `${__dirname}/../src/models/auto-build/__GroupMember.ts`,
     extFile: `${__dirname}/../src/models/permission/_GroupMember.ts`,
+    primaryKey: ['group_id', 'member'],
     reloadOnAdded: true,
     reloadOnUpdated: true,
+    modifiableBlackList: ['create_time'],
   },
   {
     generator: generator,
     tableName: 'fc_group_permission',
     outputFile: `${__dirname}/../src/models/auto-build/__GroupPermission.ts`,
     extFile: `${__dirname}/../src/models/permission/_GroupPermission.ts`,
+    primaryKey: ['group_id', 'permission_key'],
     reloadOnAdded: true,
     reloadOnUpdated: true,
+    modifiableBlackList: ['group_id', 'permission_key', 'create_time'],
   },
 ]
 

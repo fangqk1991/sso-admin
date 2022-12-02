@@ -23,7 +23,6 @@ const _modifiableCols: string[] = [
   'member',
   'is_admin',
   'author',
-  'create_time',
 ]
 const _timestampTypeCols: string[] = [
   // prettier-ignore
@@ -33,7 +32,7 @@ const _timestampTypeCols: string[] = [
 
 const dbOptions = {
   table: 'fc_group_member',
-  primaryKey: '',
+  primaryKey: ['group_id', 'member'],
   cols: _cols,
   insertableCols: _insertableCols,
   modifiableCols: _modifiableCols,

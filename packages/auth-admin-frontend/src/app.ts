@@ -11,6 +11,7 @@ import { AccountListView } from './views/account/AccountListView'
 import { AuthMode } from '@fangcha/account/lib/common/models'
 import AppListView from './views/app/AppListView'
 import { AppDetailView } from './views/app/AppDetailView'
+import { GroupDetailView } from './views/group/GroupDetailView'
 
 MySession.defaultRedirectUri = '/'
 
@@ -114,6 +115,11 @@ const _fcApp = new AdminApp({
       path: '/v1/app/:appid',
       component: AppDetailView,
       name: 'AppDetailView',
+    },
+    {
+      path: '/v1/app/:appid/app-group/:groupId',
+      component: GroupDetailView,
+      name: 'GroupDetailView',
     },
   ],
 })

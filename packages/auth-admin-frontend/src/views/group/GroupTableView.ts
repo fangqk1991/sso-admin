@@ -23,6 +23,7 @@ import { CommonAPI } from '@fangcha/app-request'
 import { CommonAppApis } from '@web/auth-common/core-api'
 import { PermissionTreeEditor } from '../permission/PermissionTreeEditor'
 import { GroupInfoDialog } from './GroupInfoDialog'
+import { RouteHelper } from '../../extensions/RouteHelper'
 
 @Component({
   components: {
@@ -99,9 +100,9 @@ import { GroupInfoDialog } from './GroupInfoDialog'
           </template>
           <template slot-scope="scope">
             <div>
-<!--              <router-link :to="UserSdkRouteHelper.to_GroupDetailView(scope.row)">-->
-<!--                {{ scope.row.groupId }}-->
-<!--              </router-link>-->
+              <router-link :to="RouteHelper.to_GroupDetailView(scope.row)">
+                {{ scope.row.groupId }}
+              </router-link>
             </div>
             <div v-if="scope.row.groupAlias !== scope.row.groupId">
               <el-tag type="success" size="mini">Alias: {{ scope.row.groupAlias }}</el-tag>
@@ -137,6 +138,8 @@ import { GroupInfoDialog } from './GroupInfoDialog'
   `,
 })
 export class GroupTableView extends ViewController {
+  RouteHelper = RouteHelper
+
   @Prop({ default: null, type: Object }) readonly appInfo!: P_AppInfo
 
   get appid() {
@@ -207,7 +210,7 @@ export class GroupTableView extends ViewController {
       this.$message.success('创建成功')
       this.reloadData()
       AlertTools.showConfirm(`创建成功，是否跳转到 ${group.name} 页面`).then(() => {
-        // this.$goto(UserSdkRouteHelper.to_GroupDetailView(group))
+        this.$goto(RouteHelper.to_GroupDetailView(group))
       })
     })
   }

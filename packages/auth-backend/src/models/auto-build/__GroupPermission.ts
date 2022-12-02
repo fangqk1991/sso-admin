@@ -17,10 +17,7 @@ const _insertableCols: string[] = [
 ]
 const _modifiableCols: string[] = [
   // prettier-ignore
-  'group_id',
-  'permission_key',
   'author',
-  'create_time',
 ]
 const _timestampTypeCols: string[] = [
   // prettier-ignore
@@ -30,7 +27,7 @@ const _timestampTypeCols: string[] = [
 
 const dbOptions = {
   table: 'fc_group_permission',
-  primaryKey: '',
+  primaryKey: ['group_id', 'permission_key'],
   cols: _cols,
   insertableCols: _insertableCols,
   modifiableCols: _modifiableCols,

@@ -21,4 +21,14 @@ export class RouteHelper {
       },
     }
   }
+
+  public static to_GroupDetailView(params: { groupId: string; appid?: string }): RawLocation {
+    return {
+      name: 'GroupDetailView',
+      params: {
+        appid: params.appid || '_',
+        groupId: params.groupId,
+      },
+    }
+  }
 }
