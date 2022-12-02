@@ -9,6 +9,7 @@ import { I18nCode, VisitorInfo } from '@fangcha/tools'
 import { HomeView } from './views/HomeView'
 import { AccountListView } from './views/account/AccountListView'
 import { AuthMode } from '@fangcha/account/lib/common/models'
+import AppListView from './views/app/AppListView'
 
 MySession.defaultRedirectUri = '/'
 
@@ -67,6 +68,11 @@ const _fcApp = new AdminApp({
           titleZh: 'SSO 客户端',
           path: '/v1/client',
         },
+        {
+          titleEn: '权限应用',
+          titleZh: '权限应用',
+          path: '/v1/app',
+        },
       ],
     },
     {
@@ -97,6 +103,11 @@ const _fcApp = new AdminApp({
       path: '/v1/account',
       component: AccountListView,
       name: 'AccountListView',
+    },
+    {
+      path: '/v1/app',
+      component: AppListView,
+      name: 'AppListView',
     },
   ],
 })

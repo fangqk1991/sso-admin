@@ -7,9 +7,9 @@ import { _App } from '../../models/permission/_App'
 import { UserSystemCenter } from '../../services/UserSystemCenter'
 
 export const Admin_AppSpecsBuilder = new AppSpecsBuilder({
-  routeTransform: (route) => {
-    return route.replace(/^\/api\//, '/api/user-sdk/')
-  },
+  // routeTransform: (route) => {
+  //   return route.replace(/^\/api\//, '/api/user-sdk/')
+  // },
   checkVisitorAppAdmin: async (ctx, app) => {
     return await UserAdminUtils.checkVisitorAppAdmin(ctx, app)
   },

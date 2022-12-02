@@ -32,6 +32,7 @@ describe('Test AppHandler.test.ts', () => {
         description: '',
       },
       powerUserList: [],
+      author: 'work@fangqk.com',
     })
     console.info(app.modelForClient())
   })

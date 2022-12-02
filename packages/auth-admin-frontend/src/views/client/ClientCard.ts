@@ -10,7 +10,6 @@ import { Admin_SsoClientApis } from '@web/auth-common/admin-api'
 @Component({
   components: {
     'my-tags-panel': MyTagsPanel,
-    'client-card': ClientCard,
   },
   template: `
     <div class="fc-card mr-2" style="width: 300px;">
