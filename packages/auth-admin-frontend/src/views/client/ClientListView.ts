@@ -3,7 +3,7 @@ import { MyAxios } from '@fangcha/vue/basic'
 import { CommonAPI } from '@fangcha/app-request'
 import { ClientInfoDialog } from './ClientInfoDialog'
 import { MessageBox } from 'element-ui'
-import { SsoClientModel, SsoClientParams } from '@fangcha/sso-server/lib/common/models'
+import { SsoClientModel, SsoClientParams } from '@fangcha/sso-models'
 import { ClientCard } from './ClientCard'
 import { Admin_SsoClientApis } from '@web/auth-common/admin-api'
 

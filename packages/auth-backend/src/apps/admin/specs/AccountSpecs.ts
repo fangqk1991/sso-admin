@@ -3,7 +3,7 @@ import assert from '@fangcha/assert'
 import { AppException } from '@fangcha/app-error'
 import { Admin_AccountApis } from '@web/auth-common/admin-api'
 import { MyAccountServer } from '../../../services/MyAccountServer'
-import { AccountErrorPhrase, CarrierType, ValidateUtils } from '@fangcha/account/lib/common/models'
+import { AccountErrorPhrase, CarrierType, ValidateUtils } from '@fangcha/account-models'
 
 const factory = new SpecFactory('Account')
 

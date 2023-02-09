@@ -1,6 +1,6 @@
 import { Component } from 'vue-property-decorator'
 import { TypicalDialog, TypicalDialogView } from '@fangcha/vue'
-import { AccountSimpleParams } from '@fangcha/account/lib/common/models'
+import { AccountSimpleParams } from '@fangcha/account-models'
 
 @Component({
   components: {

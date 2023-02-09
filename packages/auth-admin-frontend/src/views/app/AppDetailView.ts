@@ -115,7 +115,7 @@ export class AppDetailView extends ViewController {
     const queryParams = {}
     queryParams['curTab'] = this.curTab
     this.$router.replace({
-      name: this.$route.name,
+      name: this.$route.name as string,
       query: queryParams,
     })
   }

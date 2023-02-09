@@ -4,7 +4,7 @@ import { ClientInfoDialog } from './ClientInfoDialog'
 import { MyAxios } from '@fangcha/vue/basic'
 import { CommonAPI } from '@fangcha/app-request'
 import { NotificationCenter } from 'notification-center-js'
-import { SsoClientModel, SsoClientParams } from '@fangcha/sso-server/lib/common/models'
+import { SsoClientModel, SsoClientParams } from '@fangcha/sso-models'
 import { Admin_SsoClientApis } from '@web/auth-common/admin-api'
 
 @Component({

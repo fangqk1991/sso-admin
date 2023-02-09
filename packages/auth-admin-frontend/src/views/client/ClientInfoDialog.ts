@@ -1,6 +1,6 @@
 import { Component } from 'vue-property-decorator'
 import { MySwitch, StringListPanel, TypicalDialog, TypicalDialogView } from '@fangcha/vue'
-import { SsoClientParams } from '@fangcha/sso-server/lib/common/models'
+import { SsoClientParams } from '@fangcha/sso-models'
 
 @Component({
   components: {

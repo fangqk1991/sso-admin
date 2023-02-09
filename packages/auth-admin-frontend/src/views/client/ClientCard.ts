@@ -1,5 +1,5 @@
 import { Component, ConfirmDialog, MyTagsPanel, Prop, ViewController } from '@fangcha/vue'
-import { SsoClientModel, SsoClientParams } from '@fangcha/sso-server/lib/common/models'
+import { SsoClientModel, SsoClientParams } from '@fangcha/sso-models'
 import { RouteHelper } from '../../extensions/RouteHelper'
 import { ClientInfoDialog } from './ClientInfoDialog'
 import { MyAxios } from '@fangcha/vue/basic'

@@ -1,4 +1,4 @@
-import { SsoClientModel } from '@fangcha/sso-server/lib/common/models'
+import { SsoClientModel } from '@fangcha/sso-models'
 
 export class ClientUtils {
   public static init_clientModel(): SsoClientModel {

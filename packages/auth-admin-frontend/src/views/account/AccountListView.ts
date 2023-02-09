@@ -9,7 +9,7 @@ import {
 import { MyAxios } from '@fangcha/vue/basic'
 import { CommonAPI } from '@fangcha/app-request'
 import { AccountCreateDialog } from './AccountCreateDialog'
-import { CarrierType, FullAccountModel } from '@fangcha/account/lib/common/models'
+import { CarrierType, FullAccountModel } from '@fangcha/account-models'
 import { Admin_AccountApis } from '@web/auth-common/admin-api'
 
 @Component({
